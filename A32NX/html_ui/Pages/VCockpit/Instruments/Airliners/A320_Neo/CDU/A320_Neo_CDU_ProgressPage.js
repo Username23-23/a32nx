@@ -21,7 +21,36 @@ class CDUProgressPage {
         mcdu.clearDisplay();
         mcdu.page.Current = mcdu.page.ProgressPage;
         mcdu.activeSystem = 'FMGC';
-        const flightPhase = "CRZ";
+        let flightPhase = "";
+            switch (mcdu.currentFlightPhase) {
+                case FmgcFlightPhases.PREFLIGHT:
+                    flightPhase = "PREFLIGHT";
+                    break;
+                case FmgcFlightPhases.TAKEOFF:
+                    flightPhase = "TO";
+                    break;
+                case FmgcFlightPhases.CLIMB:
+                    flightPhase = "CLB";
+                    break;
+                case FmgcFlightPhases.CRUISE:
+                    flightPhase = "CRZ";
+                    break;
+                case FmgcFlightPhases.DESCENT:
+                    flightPhase = "DES";
+                    break;
+                case FmgcFlightPhases.APPROACH:
+                    flightPhase = "APPR";
+                    break; 
+                case FmgcFlightPhases.GOAROUND:
+                    flightPhase = "GA";
+                    break;
+                case FmgcFlightPhases.DONE:
+                    flightPhase = "";
+                    break;
+                default:
+                    flightPhase = "";
+                    break;  
+            }
         const flightNo = SimVar.GetSimVarValue("ATC FLIGHT NUMBER", "string");
         const flMax = mcdu.getMaxFlCorrected();
         const flOpt = (mcdu._zeroFuelWeightZFWCGEntered && mcdu._blockFuelEntered && (mcdu.isAllEngineOn() || Simplane.getIsGrounded())) ? "FL" + (Math.floor(flMax / 5) * 5).toString() + "[color]green" : "-----";
