@@ -24,25 +24,25 @@ class CDUProgressPage {
         let flightPhase = "";
         switch (mcdu.currentFlightPhase) {
             case FmgcFlightPhases.PREFLIGHT:
-                flightPhase = "PREFLIGHT";
+                flightPhase = "{green}PREFLIGHT{end}";
                 break;
             case FmgcFlightPhases.TAKEOFF:
-                flightPhase = "TO";
+                flightPhase = "{green}TO{end}";
                 break;
             case FmgcFlightPhases.CLIMB:
-                flightPhase = "CLB";
+                flightPhase = "{green}CLB{end}";
                 break;
             case FmgcFlightPhases.CRUISE:
-                flightPhase = "CRZ";
+                flightPhase = "{green}CRZ{end}";
                 break;
             case FmgcFlightPhases.DESCENT:
-                flightPhase = "DES";
+                flightPhase = "{green}DES{end}";
                 break;
             case FmgcFlightPhases.APPROACH:
-                flightPhase = "APPR";
+                flightPhase = "{green}APPROACH{end}";
                 break;
             case FmgcFlightPhases.GOAROUND:
-                flightPhase = "GA";
+                flightPhase = "{green}GA{end}";
                 break;
             case FmgcFlightPhases.DONE:
                 flightPhase = "";
