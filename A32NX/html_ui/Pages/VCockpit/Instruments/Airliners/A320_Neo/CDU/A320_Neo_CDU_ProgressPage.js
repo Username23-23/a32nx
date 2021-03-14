@@ -24,8 +24,6 @@ class CDUProgressPage {
         let flightPhase = "";
         switch (mcdu.currentFlightPhase) {
             case FmgcFlightPhases.PREFLIGHT:
-                flightPhase = "{green}PREFLIGHT{end}";
-                break;
             case FmgcFlightPhases.TAKEOFF:
                 flightPhase = "{green}TO{end}";
                 break;
@@ -39,7 +37,7 @@ class CDUProgressPage {
                 flightPhase = "{green}DES{end}";
                 break;
             case FmgcFlightPhases.APPROACH:
-                flightPhase = "{green}APPROACH{end}";
+                flightPhase = "{green}APPR{end}";
                 break;
             case FmgcFlightPhases.GOAROUND:
                 flightPhase = "{green}GA{end}";
